@@ -27,10 +27,10 @@
     "ios"
   ],
   "dependencies": {
-    "cordova-lib": "^7.1.0",
-    "gulp-util": "^3.0.4",
+    "cordova-lib": "^8.1.1",
+    "gulp-util": "^3.0.8",
     "pinkie-promise": "^2.0.0",
-    "through2": "^2.0.0"
+    "through2": "^2.0.3"
   },
   "devDependencies": {
     "xo": "*"
