@@ -1,3 +1,8 @@
+**THIS IS A FORK OF https://github.com/SamVerschueren/gulp-cordova-build-ios** \
+**YOU VERY LIKELY WANT TO USE THAT ONE, UNLESS YOU KNOW WHAT YOU'RE DOING**
+
+---
+
 # gulp-cordova-build-ios
 
 > Build the cordova project for the iOS platform.
