@@ -23,8 +23,7 @@ gulp.task('build', () => {
         .pipe(create())
         .pipe(plugin('org.apache.cordova.dialogs'))
         .pipe(plugin('org.apache.cordova.camera'))
-        .pipe(ios())
-        .pipe('ios');
+        .pipe(ios());
 });
 ```
 
