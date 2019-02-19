@@ -1,6 +1,6 @@
 {
 	"name": "gulp-cordova-build-ios",
-	"version": "3.0.0-collaborne.2",
+	"version": "3.0.0-collaborne.3",
 	"description": "Build the cordova project for the iOS platform.",
 	"license": "MIT",
 	"repository": "https://github.com/Collaborne/gulp-cordova-build-ios",
