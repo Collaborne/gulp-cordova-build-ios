@@ -14,14 +14,13 @@ module.exports = options => {
 	const developmentTeam = options.developmentTeam;
 	const packageType = options.packageType;
 
-	return through.obj((file, enc, cb) => {
+	const stream = through.obj((file, enc, cb) => {
 		// Change the working directory
 		process.env.PWD = file.path;
 
 		// Pipe the file to the next step
 		cb(null, file);
 	}, cb => {
-		const self = this;
 		const iosPath = path.join(cordova.findProjectRoot(), 'platforms', 'ios');
 		const exists = fs.existsSync(iosPath);
 
@@ -73,7 +72,7 @@ module.exports = options => {
 						var filePath = path.join(base, file);
 
 						// Push the file to the result set
-						self.push(new gutil.File({
+						stream.push(new gutil.File({
 							base: base,
 							cwd: cwd,
 							path: filePath,
@@ -91,4 +90,6 @@ module.exports = options => {
 				cb(new gutil.PluginError('gulp-cordova-build-ios', message));
 			});
 	});
+
+	return stream;
 };
