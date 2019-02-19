@@ -39,29 +39,29 @@ module.exports = options => {
 				}
 			})
 			.then(() => {
-				const options = [];
+				const platformOptions = {};
 
 				if (device) {
-					options.push('--device');
+					platformOptions.device = true;
 				}
 				if (release) {
-					options.push('--release');
+					platformOptions.release = true;
 				}
 				if (codeSignIdentity) {
-					options.push('--codeSignIdentity=' + codeSignIdentity);
+					platformOptions.codeSignIdentity = codeSignIdentity;
 				}
 				if (provisioningProfile) {
-					options.push('--provisioningProfile=' + provisioningProfile);
+					platformOptions.provisioningProfile = provisioningProfile;
 				}
 				if (developmentTeam) {
-					options.push('--developmentTeam=' + developmentTeam);
+					platformOptions.developmentTeam = developmentTeam;
 				}
 				if (packageType) {
-					options.push('--packageType=' + packageType);
+					platformOptions.packageType = packageType;
 				}
 
 				// Build the platform
-				return cordova.build({platforms: ['ios'], options: options});
+				return cordova.build({platforms: ['ios'], options: platformOptions});
 			})
 			.then(() => {
 				var base = path.join(iosPath, 'build/device');
