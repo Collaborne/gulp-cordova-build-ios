@@ -68,7 +68,7 @@ module.exports = options => {
 				var cwd = process.env.PWD;
 
 				// Iterate over the output directory
-				fs.readdirSync(base).forEach(function (file) {
+				fs.readdirSync(base).forEach(file => {
 					if (file.indexOf('.ipa') !== -1) {
 						var filePath = path.join(base, file);
 
